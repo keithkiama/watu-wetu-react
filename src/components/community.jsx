@@ -4,7 +4,10 @@ import { useState, useEffect } from "react";
 const Community = ({ limit, endpoint }) => {
     const [members, setMembers] = useState([]);
 
-    const fetchData = async (endpoint) => {
+    const fetchData = 
+
+    useEffect(() => { 
+        (async (endpoint) => {
         try {
             const resp = await fetch(`http://localhost:4000/${endpoint}?${limit ? `_limit=${limit}` : ''}`);
             const data = await resp.json();
@@ -13,12 +16,10 @@ const Community = ({ limit, endpoint }) => {
         } catch (error) {
             setMembers([]);
         }
-    }
-
-    useEffect(() => {
-        fetchData(endpoint);
-    }, [endpoint]);
-
+    })()
+    },
+        [endpoint, limit]);
+    
     return <div className="row">
         {
             members.map((member, index) => {
