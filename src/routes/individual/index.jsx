@@ -11,7 +11,7 @@ const Individual = () => {
                 .then((resp) => resp.json())
                 .then((data) => {
                     const member = (data?.members || []).find((individual) => {
-                        return individual.id == individualId;
+                        return individual.id === individualId;
                     });
 
                     setData(member);

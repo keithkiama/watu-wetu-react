@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 const Community = ({ limit, endpoint }) => {
     const [members, setMembers] = useState([]);
 
-    const fetchData = 
-
     useEffect(() => { 
         (async (endpoint) => {
         try {
