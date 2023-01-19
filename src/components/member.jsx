@@ -42,9 +42,6 @@ const Member = ({ id, dob, dod, type, name, image, groupId, founded, description
                             </div>
                     }
                 </div>
-
-
-
             </div>
         </div>
     </Link>;

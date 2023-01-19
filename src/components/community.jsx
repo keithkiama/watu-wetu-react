@@ -9,15 +9,14 @@ const Community = ({ limit, endpoint }) => {
         try {
             const resp = await fetch(`http://localhost:4000/${endpoint}?${limit ? `_limit=${limit}` : ''}`);
             const data = await resp.json();
-
+          
             setMembers(data);
         } catch (error) {
             setMembers([]);
         }
-    })()
+    })([])
     },
         [endpoint, limit]);
-    
     return <div className="row">
         {
             members.map((member, index) => {
