@@ -14,9 +14,10 @@ const Community = ({ limit, endpoint }) => {
         } catch (error) {
             setMembers([]);
         }
-    })([])
+    })()
     },
         [endpoint, limit]);
+
     return <div className="row">
         {
             members.map((member, index) => {
